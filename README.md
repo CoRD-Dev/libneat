@@ -1,6 +1,4 @@
-[![Bourbon Neat](http://neat.bourbon.io/images/logotype.svg)](http://thoughtbot.com/neat)
-
-[![Gem Version](https://badge.fury.io/rb/neat.png)](http://badge.fury.io/rb/neat) [![Code Climate](https://codeclimate.com/github/thoughtbot/neat.png)](https://codeclimate.com/github/thoughtbot/neat)
+[![Bourbon Neat](http://neat.bourbon.io/images/logotype.svg)](http://neat.bourbon.io/)
 
 **Neat** is an open source fluid grid framework built on top of [Bourbon](http://bourbon.io) with the aim of being easy enough to use out of the box and flexible enough to customize down the road.
 
@@ -12,66 +10,26 @@ Requirements
 
 Install Instructions
 ===
-Install/update the dependencies first:
+Install [Bourbon](https://github.com/CoRD-Dev/libbourbon#install-instructions) and [Bitters](https://github.com/CoRD-Dev/libbitters#install-instructions) (optional).
+
+`cd` to your projects local repository and run:
 
 ```bash
-gem install sass #or gem update sass
-gem install bourbon #or gem update bourbon
+git submodule add https://github.com/CoRD-Dev/libneat.git sass/neat
 ```
-Install Neat:
+(`sass/neat` should be the directory your sass/scss files are kept +/neat.)
 
-```bash
-gem install neat
-```
-Then `cd` to your Sass directory and run:
+The generated folder will contain all Neats files.
 
-```bash
-bourbon install #If not installed
-neat install
-```
+Import Neat after Bourbon in your `application.css.scss`. All additional stylesheets should be imported below Neat:
 
-In your main stylesheet:
-
-```sass
+```scss
 @import "bourbon/bourbon";
 @import "neat/neat";
+
+// All other imports
 ```
 
-To update Neat files, run:
-
-```bash
-neat update
-```
-
-and to remove them:
-
-```bash
-neat remove
-```
-
-Ruby on Rails
-===
-
-In your Gemfile:
-
-```bash
-gem 'neat'
-```
-
-After running `bundle install` you will be able to use Bourbon and Neat together.
-
-If you see this error `Bundler could not find compatible versions for gem "sass"` run:
-
-```bash
-bundle update sass
-```
-
-Within your `application.css.scss` file place the following:
-
-```sass
-@import "bourbon";
-@import "neat";
-```
 
 Getting started
 ===
@@ -79,15 +37,15 @@ Getting started
 First off, if you are planning to override the default grid settings (12 columns), it is recommended to create a `_grid-settings.scss` file for that purpose. Make sure to import it right *before* importing Neat:
 
 ```scss
-@import "bourbon/bourbon"; // or "bourbon" when in Rails
+@import "bourbon/bourbon";
 @import "grid-settings";
-@import "neat/neat"; // or "neat" when in Rails
+@import "neat/neat";
 ```
 
 In your newly created  `_grid-settings.scss`, import `neat-helpers` if you are planning to use `new-breakpoint()`, then define your new variables:
 
 ```scss
-@import "neat/neat-helpers"; // or "neat-helpers" when in Rails
+@import "neat/neat-helpers";
 
 // Change the grid settings
 $column: 90px;
