@@ -10,7 +10,7 @@ Requirements
 
 Install Instructions
 ===
-Install [Bourbon](https://github.com/CoRD-Dev/libbourbon#install-instructions) and [Bitters](https://github.com/CoRD-Dev/libbitters#install-instructions) (optional).
+Install [SASS](http://sass-lang.com/) and [Bourbon](https://github.com/CoRD-Dev/libbourbon#install-instructions).
 
 `cd` to your projects local repository and run:
 
@@ -29,6 +29,9 @@ Import Neat after Bourbon in your `application.css.scss`. All additional stylesh
 
 // All other imports
 ```
+
+(Optional) Install [Bitters](https://github.com/CoRD-Dev/libbitters#install-instructions).
+
 
 
 Getting started
